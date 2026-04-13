@@ -103,4 +103,62 @@ export class EmployeeService {
       throw error;
     }
   }
+
+  async updateEmployee(eid: string, employeeData: any) {
+    const mutation = `
+      mutation UpdateEmployee($eid: ID!, $first_name: String, $last_name: String, $email: String, $gender: String, $designation: String, $salary: Float, $department: String, $employee_photo_base64: String) {
+        updateEmployeeByEid(
+          eid: $eid,
+          first_name: $first_name,
+          last_name: $last_name,
+          email: $email,
+          gender: $gender,
+          designation: $designation,
+          salary: $salary,
+          department: $department,
+          employee_photo_base64: $employee_photo_base64
+        ) {
+          id
+          first_name
+        }
+      }
+    `;
+
+    try {
+      const response = await axios.post(this.apiUrl, {
+        query: mutation,
+        variables: { eid, ...employeeData }
+      });
+      return response.data.data.updateEmployeeByEid;
+    } catch (error) {
+      console.error('Error updating employee:', error);
+      throw error;
+    }
+  }
+
+  async searchEmployees(filter: string) {
+    const query = `
+      query SearchEmployee($filter: String!) {
+        searchEmployee(filter: $filter) {
+          id
+          first_name
+          last_name
+          email
+          department
+          designation
+        }
+      }
+    `;
+
+    try {
+      const response = await axios.post(this.apiUrl, {
+        query: query,
+        variables: { filter }
+      });
+      return response.data.data.searchEmployee;
+    } catch (error) {
+      console.error('Error searching employees:', error);
+      throw error;
+    }
+  }
 }
