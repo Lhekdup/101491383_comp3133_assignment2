@@ -5,7 +5,8 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private apiUrl = 'https://comp3133-101491383-assignment1.onrender.com'; 
+  
+private apiUrl = 'https://comp3133-101491383-assignment1.onrender.com/graphql';
 
   constructor() { }
 
