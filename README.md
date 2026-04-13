@@ -1,60 +1,45 @@
-# 101491383Comp3133Assignment2
+# COMP 3133: Full Stack Development - Assignment 2
+**Employee Management System**
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.22.
+**Author:** Lhekdup  
+**Student ID:** 101491383  
 
-## Development server
+## Project Overview
+This project is a full-stack Employee Management Application built using an Angular frontend and a Node.js/GraphQL backend. It allows users to create accounts, securely log in, and manage a database of employees through comprehensive CRUD operations.
 
-To start a local development server, run:
+## Tech Stack
+### Frontend
+**Framework:** Angular (Standalone Components)
+**Styling:** Bootstrap 5 & Custom CSS
+**HTTP Client:** Axios
+**Routing:** Angular Router
+**Hosting:** Vercel *(Link below)*
 
-```bash
-ng serve
-```
+### Backend (Assignment 1)
+**Runtime:** Node.js & Express.js
+**API:** GraphQL (express-graphql)
+**Database:** MongoDB Atlas
+**Hosting:** Render/Other *(Link below)*
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Features Implemented
+This application satisfies all requirements outlined in the COMP 3133 Evaluation Criteria:
+**User Authentication:** * Full Signup and Login flows with form validation.
+  Session management utilizing Local Storage for JWT tokens.
+**Employee Management (CRUD):**
+  **Create:** Add new employees, including converting uploaded profile pictures to Base64 strings for database storage.
+  **Read:** View a formatted table of all employees, or click to view detailed individual profile cards.
+  **Update:** Modify existing employee records with pre-filled forms.
+  **Delete:** Remove employees from the database with a confirmation prompt.
+**Search Functionality:** Dynamic filtering to search the employee list by department or designation.
+**Responsive UI/UX:** Clean, professional interface built strictly with standard Bootstrap components and responsive grids.
 
-## Code scaffolding
+## Local Setup Instructions
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To run this application locally, you must run both the backend and the frontend servers concurrently.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# 101491383_comp3133_assignment2
+### 1. Backend Setup
+1. Navigate into the Assignment 1 backend directory.
+2. Ensure your `.env` file contains your `PORT` and MongoDB connection string.
+3. Install dependencies:
+   ```bash
+   npm install
